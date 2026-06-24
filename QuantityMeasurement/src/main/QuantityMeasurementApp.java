@@ -1,3 +1,5 @@
+package main;
+
 public class QuantityMeasurementApp {
 
     public static class Feet {
