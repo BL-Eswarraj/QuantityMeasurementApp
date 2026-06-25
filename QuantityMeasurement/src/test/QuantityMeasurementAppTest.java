@@ -1,46 +1,105 @@
 package test;
 
-import main.QuantityMeasurementApp;
+
+import com.src.main.QuantityMeasurementApp;
+
 import org.junit.Test;
-import org.junit.Before;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class QuantityMeasurementAppTest {
 
-    private QuantityMeasurementApp.Feet feet1;
-    private QuantityMeasurementApp.Feet feet2;
-    private QuantityMeasurementApp.Feet feet3;
+    // Feet Test Cases
+    @Test
+    public void testFeetEquality_SameValue() {
 
-    @Before
-    public void setUp() {
-        feet1 = new QuantityMeasurementApp.Feet(1.0);
-        feet2 = new QuantityMeasurementApp.Feet(1.0);
-        feet3 = new QuantityMeasurementApp.Feet(2.0);
+        assertTrue(
+                QuantityMeasurementApp.compareFeet(1.0, 1.0)
+        );
     }
 
     @Test
-    public void testEquality_SameValue() {
-        assertTrue("1.0 ft should equal 1.0 ft", feet1.equals(feet2));
+    public void testFeetEquality_DifferentValue() {
+
+        assertFalse(
+                QuantityMeasurementApp.compareFeet(1.0, 2.0)
+        );
     }
 
     @Test
-    public void testEquality_DifferentValue() {
-        assertFalse("1.0 ft should NOT equal 2.0 ft", feet1.equals(feet3));
+    public void testFeetEquality_NullComparison() {
+
+        QuantityMeasurementApp.Feet feet =
+                new QuantityMeasurementApp.Feet(1.0);
+
+        assertFalse(feet.equals(null));
     }
 
     @Test
-    public void testEquality_NullComparison() {
-        assertFalse("Feet should NOT equal null", feet1.equals(null));
+    public void testFeetEquality_NonNumericInput() {
+
+        QuantityMeasurementApp.Feet feet =
+                new QuantityMeasurementApp.Feet(1.0);
+
+        String value = "ABC";
+
+        assertFalse(feet.equals(value));
     }
 
     @Test
-    public void testEquality_SameReference() {
-        assertTrue("Feet should equal itself", feet1.equals(feet1));
+    public void testFeetEquality_SameReference() {
+
+        QuantityMeasurementApp.Feet feet =
+                new QuantityMeasurementApp.Feet(1.0);
+
+        assertTrue(feet.equals(feet));
+    }
+
+    // Inches Test Cases
+
+    @Test
+    public void testInchesEquality_SameValue() {
+
+        assertTrue(
+                QuantityMeasurementApp.compareInches(1.0, 1.0)
+        );
     }
 
     @Test
-    public void testEquality_DifferentTypeComparison() {
-        String notFeet = "1.0 ft";
-        assertFalse("Feet should NOT equal String", feet1.equals(notFeet));
+    public void testInchesEquality_DifferentValue() {
+
+        assertFalse(
+                QuantityMeasurementApp.compareInches(1.0, 2.0)
+        );
+    }
+
+    @Test
+    public void testInchesEquality_NullComparison() {
+
+        QuantityMeasurementApp.Inches inches =
+                new QuantityMeasurementApp.Inches(1.0);
+
+        assertFalse(inches.equals(null));
+    }
+
+    @Test
+    public void testInchesEquality_NonNumericInput() {
+
+        QuantityMeasurementApp.Inches inches =
+                new QuantityMeasurementApp.Inches(1.0);
+
+        String value = "ABC";
+
+        assertFalse(inches.equals(value));
+    }
+
+    @Test
+    public void testInchesEquality_SameReference() {
+
+        QuantityMeasurementApp.Inches inches =
+                new QuantityMeasurementApp.Inches(1.0);
+
+        assertTrue(inches.equals(inches));
     }
 }
