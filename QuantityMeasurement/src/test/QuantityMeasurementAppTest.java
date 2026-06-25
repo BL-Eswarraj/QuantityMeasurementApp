@@ -1,7 +1,7 @@
 package test;
 
 
-import com.src.main.QuantityMeasurementApp;
+import main.QuantityMeasurementApp;
 
 import org.junit.Test;
 
