@@ -1,61 +1,105 @@
 package main;
-
 public class QuantityMeasurementApp {
 
+    // Feet class
     public static class Feet {
+
         private final double value;
 
         public Feet(double value) {
             this.value = value;
         }
 
+        public double getValue() {
+            return value;
+        }
+
         @Override
         public boolean equals(Object obj) {
+
+            // Same reference check
             if (this == obj) {
                 return true;
             }
 
-            if (obj == null || this.getClass() != obj.getClass()) {
+            // Null and type check
+            if (obj == null || getClass() != obj.getClass()) {
                 return false;
             }
 
             Feet feet = (Feet) obj;
+
+            // Safe double comparison
             return Double.compare(this.value, feet.value) == 0;
-        }
-
-        @Override
-        public int hashCode() {
-            return Double.hashCode(value);
-        }
-
-        @Override
-        public String toString() {
-            return value + " ft";
         }
     }
 
+    // Inches class
+    public static class Inches {
+
+        private final double value;
+
+        public Inches(double value) {
+            this.value = value;
+        }
+
+        public double getValue() {
+            return value;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+
+            // Same reference check
+            if (this == obj) {
+                return true;
+            }
+
+            // Null and type check
+            if (obj == null || getClass() != obj.getClass()) {
+                return false;
+            }
+
+            Inches inches = (Inches) obj;
+
+            // Safe double comparison
+            return Double.compare(this.value, inches.value) == 0;
+        }
+    }
+
+    // Static method for Feet equality check
+    public static boolean compareFeet(double value1, double value2) {
+
+        Feet feet1 = new Feet(value1);
+        Feet feet2 = new Feet(value2);
+
+        return feet1.equals(feet2);
+    }
+
+    // Static method for Inches equality check
+    public static boolean compareInches(double value1, double value2) {
+
+        Inches inches1 = new Inches(value1);
+        Inches inches2 = new Inches(value2);
+
+        return inches1.equals(inches2);
+    }
+
+    // Main method
     public static void main(String[] args) {
-        System.out.println("=== UC1: Feet Measurement Equality ===\n");
 
-        // TEST 1: Two Feet objects with SAME value
-        Feet feet1 = new Feet(1.0);
-        Feet feet2 = new Feet(1.0);
-        System.out.println("TEST 1 - Same values (1.0 ft = 1.0 ft): " + feet1.equals(feet2));
+        // Inches comparison
+        boolean inchResult = compareInches(1.0, 1.0);
 
-        // TEST 2: Two Feet objects with DIFFERENT values
-        Feet feet3 = new Feet(2.0);
-        System.out.println("TEST 2 - Different values (1.0 ft ≠ 2.0 ft): " + feet1.equals(feet3));
+        System.out.println("Input: 1.0 inch and 1.0 inch");
+        System.out.println("Output: Equal (" + inchResult + ")");
 
-        // TEST 3: Compare Feet object with NULL
-        System.out.println("TEST 3 - Compare with null: " + feet1.equals(null));
+        System.out.println();
 
-        // TEST 4: Compare Feet object with ITSELF (Reflexive property)
-        System.out.println("TEST 4 - Same reference (reflexive): " + feet1.equals(feet1));
+        // Feet comparison
+        boolean feetResult = compareFeet(1.0, 1.0);
 
-        // TEST 5: Symmetric property (a.equals(b) == b.equals(a))
-        Feet feet4 = new Feet(3.5);
-        Feet feet5 = new Feet(3.5);
-        System.out.println("TEST 5a - Symmetric (feet4 = feet5): " + feet4.equals(feet5));
-        System.out.println("TEST 5b - Symmetric (feet5 = feet4): " + feet5.equals(feet4));
+        System.out.println("Input: 1.0 ft and 1.0 ft");
+        System.out.println("Output: Equal (" + feetResult + ")");
     }
 }
