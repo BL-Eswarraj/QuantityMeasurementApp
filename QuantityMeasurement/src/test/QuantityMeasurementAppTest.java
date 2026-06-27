@@ -1,7 +1,7 @@
 package test;
 
 import main.LengthUnit;
-import main.QuantityLength;
+import com.src.main.QuantityLength;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
