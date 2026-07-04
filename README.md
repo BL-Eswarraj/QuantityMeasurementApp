@@ -9,8 +9,6 @@
 ![H2](https://img.shields.io/badge/Database-H2-blue)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-orange)
 ![JUnit5](https://img.shields.io/badge/Testing-JUnit5-success)
-![Mockito](https://img.shields.io/badge/Mockito-Test-yellowgreen)
-![License](https://img.shields.io/badge/License-MIT-blue)
 
 **A Spring Boot REST API for performing Quantity Measurement, Unit Conversion, Comparison, and Arithmetic Operations using clean architecture and object-oriented design principles.**
 
@@ -170,7 +168,7 @@ QuantityMeasurementApp
 
 ---
 
-# 📡 REST APIs
+# REST APIs
 
 ---
 
@@ -285,7 +283,7 @@ GET /api/v1/quantities/count/COMPARE
 
 ---
 
-# 💾 Database
+# Database
 
 ## H2 Database
 
@@ -341,7 +339,7 @@ http://localhost:8080/v3/api-docs
 
 ---
 
-# 🧪 Testing
+# Testing
 
 The project includes
 
@@ -362,7 +360,7 @@ QuantityMeasurementServiceTest
 
 ---
 
-# 🎯 Concepts Covered
+# Concepts Covered
 
 ## Core Java
 
@@ -434,7 +432,7 @@ QuantityMeasurementServiceTest
 
 ---
 
-# ▶️ Running the Project
+# Running the Project
 
 ## Clone Repository
 
@@ -472,7 +470,7 @@ QuantityMeasurementApplication.java
 
 ---
 
-# 📈 Learning Outcomes
+# Learning Outcomes
 
 This project demonstrates
 
@@ -491,7 +489,7 @@ This project demonstrates
 
 ---
 
-# 🚀 Future Enhancements
+# Future Enhancements
 
 - JWT Authentication
 - Spring Security
@@ -506,7 +504,7 @@ This project demonstrates
 
 ---
 
-# 🤝 Contributing
+# Contributing
 
 Contributions are welcome!
 
@@ -537,12 +535,6 @@ git push origin feature/new-feature
 ### Create Pull Request
 
 ---
-
-# 👨‍💻 Author
-
-## **Anbarasu A**
-
-**Java Full Stack Developer**
 
 ### Skills
 
